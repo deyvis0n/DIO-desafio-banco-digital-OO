@@ -1,12 +1,13 @@
 package com.digital.conta;
 
+import com.digital.banco.Banco;
 import com.digital.cliente.Cliente;
 
 public class ContaPoupanca extends Conta {
 
 
-    public ContaPoupanca(Cliente cliente) {
-        super(cliente);
+    public ContaPoupanca(Cliente cliente, Banco banco) {
+        super(cliente, banco);
     }
 
     @Override

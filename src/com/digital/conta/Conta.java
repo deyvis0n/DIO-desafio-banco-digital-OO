@@ -1,6 +1,8 @@
 package com.digital.conta;
 
+import com.digital.banco.Banco;
 import com.digital.cliente.Cliente;
+import com.digital.exception.SaldoInsuficienteException;
 import lombok.Data;
 
 @Data
@@ -13,24 +15,28 @@ public abstract class Conta implements IConta {
     private double saldo;
     private Cliente cliente;
 
-    protected Conta(Cliente cliente) {
+    protected Conta(Cliente cliente, Banco banco) {
         this.agencia = AGENCIA_PADRAO;
         this.numero = SEQUENCIAL++;
         this.cliente = cliente;
+        banco.adicionarConta(this);
     }
 
     @Override
-    public void sacar(double valor) {
-        saldo -= valor;
+    public void sacar(double valor) throws SaldoInsuficienteException {
+        if (getSaldo() - valor < 0) {
+            throw new SaldoInsuficienteException();
+        }
+        setSaldo(getSaldo() - valor);
     }
 
     @Override
     public void depositar(double valor) {
-        saldo += valor;
+        setSaldo(getSaldo() + valor);
     }
 
     @Override
-    public void trasferir(double valor, IConta contaDestino) {
+    public void trasferir(double valor, IConta contaDestino) throws SaldoInsuficienteException {
         this.sacar(valor);
         contaDestino.depositar(valor);
     }
@@ -43,4 +49,7 @@ public abstract class Conta implements IConta {
         return texto;
     }
 
+    private void setSaldo(double saldo) {
+        this.saldo = saldo;
+    }
 }
