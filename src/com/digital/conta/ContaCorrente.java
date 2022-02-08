@@ -8,8 +8,8 @@ public class ContaCorrente extends Conta {
     }
 
     @Override
-    public void imprimirExtrato() {
-        System.out.println("=== Extrato Conta Corrente ===");
-        super.imprimirInfosComuns();
+    public String imprimirExtrato() {
+        String texto = "=== Extrato Conta Corrente ===";
+        return super.imprimirInfosComuns(texto);
     }
 }

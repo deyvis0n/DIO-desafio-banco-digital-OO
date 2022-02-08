@@ -15,6 +15,10 @@ public class Cliente {
         this.cpf = verificarCPF(cpf);
     }
 
+    public void setCpf(String cpf) throws CPFInvalidoException {
+        this.cpf = verificarCPF(cpf);
+    }
+
     private String verificarCPF(String cpf) throws CPFInvalidoException {
         if (!cpf.matches(VALIDAR_CPF)
                 || cpf.equals("00000000000")

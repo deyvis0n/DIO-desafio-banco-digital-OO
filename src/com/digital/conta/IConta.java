@@ -8,5 +8,5 @@ public interface IConta {
 
     void trasferir(double valor, IConta contaDestino);
 
-    void imprimirExtrato();
+    String imprimirExtrato();
 }

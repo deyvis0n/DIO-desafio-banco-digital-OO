@@ -18,8 +18,9 @@ public class Main {
             IConta poupanca = new ContaPoupanca(cliente1);
             cc.trasferir(100, poupanca);
 
-            cc.imprimirExtrato();
-            poupanca.imprimirExtrato();
+            System.out.println(cc.imprimirExtrato());
+            System.out.println(poupanca.imprimirExtrato());
+
         } catch (CPFInvalidoException cie) {
             System.out.println("Houve um erro ao criar cliente: " + cie.getMessage());
         } catch (Exception e) {
