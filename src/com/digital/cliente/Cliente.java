@@ -1,3 +1,5 @@
+package com.digital.cliente;
+
 public class Cliente {
 
     private String nome;

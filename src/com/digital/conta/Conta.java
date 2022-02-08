@@ -1,3 +1,7 @@
+package com.digital.conta;
+
+import com.digital.cliente.Cliente;
+
 public abstract class Conta implements IConta {
     private static final int AGENCIA_PADRAO = 100;
     private static int SEQUENCIAL = 1;

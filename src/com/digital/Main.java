@@ -1,3 +1,10 @@
+package com.digital;
+
+import com.digital.cliente.Cliente;
+import com.digital.conta.ContaCorrente;
+import com.digital.conta.ContaPoupanca;
+import com.digital.conta.IConta;
+
 public class Main {
     public static void main(String[] args) {
         Cliente cliente1 = new Cliente();

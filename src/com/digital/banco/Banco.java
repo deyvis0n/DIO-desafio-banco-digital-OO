@@ -1,3 +1,7 @@
+package com.digital.banco;
+
+import com.digital.conta.Conta;
+
 import java.util.List;
 
 public class Banco {

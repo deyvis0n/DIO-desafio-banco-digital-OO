@@ -1,3 +1,7 @@
+package com.digital.conta;
+
+import com.digital.cliente.Cliente;
+
 public class ContaCorrente extends Conta {
     public ContaCorrente(Cliente cliente) {
         super(cliente);
